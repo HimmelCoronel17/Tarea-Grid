@@ -1,0 +1,117 @@
+* {
+    margin: 3px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: red; 
+    padding: 10px;
+}
+
+.padre {
+    display: grid;
+    background-color: yellow; 
+    height: 95vh;
+    gap: 10px;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "header header header"
+        "ca cb cc"
+        "grande grande lat1"
+        "grande grande lat2"
+        "grande grande lat3"
+        "inf1 inf2 foot"
+        "inf1 inf3 foot";
+}
+
+.titulo { grid-area: header; background-color: yellowgreen; font-size: 25px; padding: 10px; }
+.caja-a { grid-area: ca; background-color: yellowgreen; }
+.caja-b { grid-area: cb; background-color: yellowgreen; }
+.caja-c { grid-area: cc; background-color: yellowgreen; }
+
+.caja-grande { 
+    grid-area: grande; 
+    background-color: yellowgreen; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+
+.lateral-1 { grid-area: lat1; background-color: yellowgreen; }
+.lateral-2 { grid-area: lat2; background-color: yellowgreen; }
+.lateral-3 { grid-area: lat3; background-color: yellowgreen; }
+.inferior-1 { grid-area: inf1; background-color: yellowgreen; }
+.inferior-2 { grid-area: inf2; background-color: yellowgreen; }
+.inferior-3 { grid-area: inf3; background-color: yellowgreen; }
+.footer { grid-area: foot; background-color: yellowgreen; display: flex; justify-content: center; align-items: center; }
+
+
+.personaje {
+    width: 160px;
+    height: 200px;
+    position: relative; 
+}
+
+
+.personaje::before, .personaje::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: orange; 
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    z-index: 1;
+}
+.personaje::before { left: 35px; } 
+.personaje::after { right: 35px; }  
+
+/* CABEZA */
+.cabeza {
+    width: 85px;
+    height: 85px;
+    background-color: #bbdefb;
+    border: 2px solid #1e88e5;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 37.5px; 
+    z-index: 3;
+}
+
+/* CUERPO */
+.cuerpo {
+    width: 140px;
+    height: 110px;
+    background-color: #90caf9;
+    border: 2px solid #1e88e5;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    z-index: 2;
+}
+
+.ojo-izq, .ojo-der {
+    width: 18px;
+    height: 18px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+}
+.ojo-izq { left: 15px; }
+.ojo-der { right: 15px; }
+
+.boca {
+    width: 12px;
+    height: 12px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 18px;
+    left: 33px;
+}
